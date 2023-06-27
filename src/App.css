@@ -41,6 +41,7 @@
 .mi-formulario textarea {
   display: block;
   width: 80%;
+  max-width: 300px;
   margin: 15px auto;
   padding: 10px;
 }
