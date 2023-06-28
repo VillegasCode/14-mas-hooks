@@ -1,48 +1,9 @@
 import React, { useState } from 'react'
+import { useForm } from '../hooks/useForm';
 
 export const MiFormulario = () => {
 
-  const [formulario, setFormulario] = useState({});
-
-  const serializarFormulario = (formulario) => {
-    const formData = new FormData(formulario);
-
-    const objetoCompleto = {};
-
-    for(let [name, value] of formData){
-      objetoCompleto[name] = value;
-    }
-
-    return objetoCompleto;
-  }
-
-  const enviado = (e) =>{
-      e.preventDefault();
-      
-      // Esto fue reemplazado por serializarfORMULARIO
-      // let curso = {
-      //   titulo: e.target.titulo.value,
-      //   anio: e.target.anio.value,
-      //   descripcion: e.target.descripcion.value,
-      //   autor: e.target.autor.value,
-      //   email: e.target.email.value,
-      // }
-
-      // setFormulario(curso);
-
-      let curso = serializarFormulario(e.target);
-
-      setFormulario(curso);
-  }
-
-  const cambiado = ({target}) => {
-    const {name, value} = target;
-
-    setFormulario({
-      ...formulario,
-      [name]: value
-    });
-  }
+  const {formulario, enviado, cambiado} = useForm({});
 
   return (
     <div>
