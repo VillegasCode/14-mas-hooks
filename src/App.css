@@ -63,3 +63,9 @@
 .codigo {
   font-size: 12px;
 }
+
+.enviado {
+  background-color: green;
+  color: white;
+  border: 10px solid blue;
+}
